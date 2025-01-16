@@ -1,0 +1,29 @@
+/*
+Write a function htoi(s), which converts a string of hexadecimal digits 
+(including an optional 0x or 0X) into its equivalent integer value. The allowable digits are 0 
+through 9, a through f, and A through F.  
+   */
+
+#include <stdio.h>
+
+int main(){
+	char i={};
+	int temp=0;
+	int out=0;
+	while((i=getchar()) != EOF){
+		if(i>='0' && i<='9'){
+			temp = i-'0';
+		}else if(i>='A' && i<='F'){
+			temp = 10+ (i - 'A');
+		}else if(i>='a' && i<='f'){
+			temp = 10+ (i - 'a');
+		}else if(i == '\n'){
+			printf("decimal: %d\n", out);
+		}else{
+			printf("hex value only\n");
+		}
+
+
+
+	}
+}
