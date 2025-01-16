@@ -1,6 +1,6 @@
 > All the exercises I have completed from the book **ANSI C programming by B&D**
 <br>
-> May contains errors 
+
 ## QUESTIONS
 
 <details>
@@ -45,3 +45,5 @@
 - make vertical bar for 13 and 14
 - need to improve 16
 -->
+
+> May contains errors 
