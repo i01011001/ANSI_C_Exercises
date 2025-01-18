@@ -1,5 +1,4 @@
-> All the exercises I have completed from the book **ANSI C programming by B&D**
-<br>
+<img src="./images/bd.png" height=600px>
 
 ## QUESTIONS
 
@@ -40,10 +39,12 @@
 <li>Rewrite the function lower, which converts upper case letters to lower case, with a conditional expression instead of if-else. </li>
 </ol>
 </details>
+
 <!--
 #### thoughts
 - make vertical bar for 13 and 14
 - need to improve 16
 -->
 
-> May contains errors 
+> [!Warning]
+> May contains errors or be incorrect
