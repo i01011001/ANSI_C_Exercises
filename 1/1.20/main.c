@@ -5,6 +5,7 @@
    */
 
 #include <stdio.h>
+#include <string.h>
 
 #define _GREEN_ "\033[32m"
 #define _YELLOW_ "\033[33m"
@@ -24,7 +25,6 @@ int main(){
 	int len=0;
 
 	while( (len = get_line(buffer, MAXLEN)) > 0){
-
 		remove_trailing_space(buffer, len);
 
 		print_array(buffer);
@@ -40,7 +40,7 @@ static void print_array(char* buffer){
 	putchar('\n');
 	while(buffer[count]!='\0') {
 		if(buffer[count] != '\t') {
-			printf("%d: %c\n",count, buffer[count]);
+			printf("%2d: %c\n",count, buffer[count]);
 		}else{
 			printf("%s", _YELLOW_);
 			printf("%d: %s\n",count, "\\t");
@@ -79,29 +79,24 @@ static void remove_trailing_space(char* buffer, int len){
 
 static void detab(char* buffer, int len, int tab_space){
 	int tab_count = 0;
-	int x = 0;
 	char out[MAXLEN] = {0}; 
-	for(int i=0 ; i <= (len-1) ; i++){
+	for(int i=0 ; i < len ; i++){
 		if(buffer[i] == '\t'){
 			tab_count++;
 		}
 	}
-	int temp = tab_count;;
-	for(int i = len ; i>=0 ; i--){
-		x  = i + temp * (tab_space-1);
-
-		if(buffer[i] != '\t'){
-			out[x] = buffer[i];
-		}else{
-			for(int j=0 ; j<tab_space ; j++){
-				out[x-j] = ' ';
+	int len_final = len + tab_count*(tab_space-1);
+	int x= len_final;
+	for(int i=len; i>=0 ; i--){
+		if(buffer[i] == '\t' && tab_count!=0){
+			for(int j=0 ; j<tab_space; j++ ){
+				out[x--] = ' ';
 			}
-			temp--;
+			tab_count--;
+		} else {
+			out[x--] = buffer[i];
 		}
-		if(temp==0) 
-		{
-			copy_string(buffer, out, len+tab_count*(tab_space-1));
-			break;
-		}
+		printf("%d:\'%c\' | %d:\'%c\'\n", i, buffer[i], x+1, out[x+1]);
 	}
+	copy_string(buffer, out, strlen(out));
 }
