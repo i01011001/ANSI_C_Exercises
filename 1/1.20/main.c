@@ -96,7 +96,6 @@ static void detab(char* buffer, int len, int tab_space){
 		} else {
 			out[x--] = buffer[i];
 		}
-		printf("%d:\'%c\' | %d:\'%c\'\n", i, buffer[i], x+1, out[x+1]);
 	}
 	copy_string(buffer, out, strlen(out));
 }
