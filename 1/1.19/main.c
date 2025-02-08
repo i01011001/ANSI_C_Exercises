@@ -19,7 +19,7 @@ int main(){
 
 	while( (len = gline(buffer, MAXLEN)) > 0){
 		if(buffer[len-1] == ' ' || buffer[len-1] == '\t'){
-			printf("%sspaces detected, removing them now\n%s",_YELLOW_,_RESET_);
+			printf("%swhitespaces detected, removing them now\n%s",_YELLOW_,_RESET_);
 			while (buffer[len-1] == ' ' || buffer[len-1] == '\t') {
 				buffer[len-1]='\0';
 				len -= 1;

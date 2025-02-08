@@ -37,6 +37,9 @@
 <li>Write a function rightrot(x,n) that returns the value of the integer x rotated to the right by n positions.  </li>
 <li>In a two's complement number system, x &= (x-1) deletes the rightmost 1-bit in x. Explain why. Use this observation to write a faster version of bitcount.  </li>
 <li>Rewrite the function lower, which converts upper case letters to lower case, with a conditional expression instead of if-else. </li>
+<li>Write a program to remove trailing blanks and tabs from each line of input, and to delete entirely blank lines.  </li>
+<li>Write a function reverse(s) that reverses the character string s. Use it to write a program that reverses its input a line at a time. </li>
+<li>Write a program detab that replaces tabs in the input with the proper number of blanks to space to the next tab stop. Assume a fixed set of tab stops, say every n columns. Should n be a variable or a symbolic parameter? </li>
 </ol>
 </details>
 
